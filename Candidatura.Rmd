@@ -36,7 +36,7 @@ xaringanExtra::use_scribble()
 xaringanExtra::use_progress_bar(color = "#0051BA", location = "bottom", height = "5px")
 ```
 
-## Panorama en México
+## [Panorama en México](https://jalilrt.github.io/Candidatura_presentacion/presentacion13_anexos.pdf)
 ----
 
 - El alcoholismo es el padecimiento adictivo de mayor prevalencia.
