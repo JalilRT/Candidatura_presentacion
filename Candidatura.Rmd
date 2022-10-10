@@ -36,12 +36,12 @@ xaringanExtra::use_scribble()
 xaringanExtra::use_progress_bar(color = "#0051BA", location = "bottom", height = "5px")
 ```
 
-## [Panorama en México](https://jalilrt.github.io/Candidatura_presentacion/presentacion13_anexos.pdf)
+## Panorama en México
 ----
 
 - El alcoholismo es el padecimiento adictivo de mayor prevalencia.
 
-```{r echo=FALSE, fig.align='center', out.width='100%',dpi=300}
+```{r echo=FALSE, fig.align='center',out.width='100%',dpi=300}
 knitr::include_graphics('images/prevalcohol.png')
 ```
 <p style="font-size:12pt" align="left"> Figura 1. Prevalencia en México de población adicta al consumo de alcohol </span> </p>
@@ -54,21 +54,12 @@ Fuente: CIJ, INEGI y GLAC consulting]
 ## Trastorno por uso de alcohol
 ----
 
-.pull-left[
+Patrón desadaptativo de consumo que conlleva un deterioro o malestar clínicamente significativo (DSM-V).
 
-Patrón desadaptativo de consumo que conlleva un deterioro o malestar clínicamente significativo expresado por tres o más de los siguientes síntomas (DSM-V).
-
-- Diferentes maneras para su estudio
-
-]
-
-.pull-right[
-```{r echo=FALSE, fig.align='center', out.width='100%',dpi=200}
+```{r echo=FALSE, fig.align='center', out.width='42%',dpi=200}
 knitr::include_graphics('images/autoadmin.png')
 ```
 <p style="font-size:12pt" align="left"> Figura 2. Paradigmas de roedores y humanos para el estudio del trastorno por uso de alcohol a nivel translacional (Modificado de <span style="color:Blue">Nieto et al., 2021</span>) </p>
-
-]
 
 .footnote[----
 American Psychiatric Association. (2013). Diagnostic and statistical manual of mental disorders (5th ed.)   
@@ -117,6 +108,20 @@ Koob, G. F., & Volkow, N. D. (2010). Neurocircuitry of addiction. Neuropsychopha
 
 ---
 
+## Fenotipo por consumo crónico de alcohol
+----
+
+```{r echo=FALSE, fig.align='center', out.width='70%',dpi=200}
+knitr::include_graphics('images/corti.png')
+```
+<p style="font-size:12pt" align="left"> Figura 5. Aumento del grosor cortical del grupo del etanol en ratas Wistar adolescentes (AIE) comparado con un control (CON) en el cingulado posterior, detectado por resonancia magnética (MRI) e inmunohistoquímica
+ (Modificado de <span style="color:Blue">Vetreno et al, 2017</span>) </p>
+
+.footnote[----
+Vetreno RP, et al. (2017). Adult rat cortical thickness changes across age and following adolescent intermittent ethanol treatment. Addict Biol.]
+
+---
+
 ## Estrés
 ----
 - Percepción de la demanda excesiva del ambiente sobre la capacidad de un organismo <span style="color:Blue"> (Ruisoto $\&$ Contador, 2019) </span>
@@ -125,7 +130,7 @@ Koob, G. F., & Volkow, N. D. (2010). Neurocircuitry of addiction. Neuropsychopha
 ```{r echo=FALSE, fig.align='center', out.width='40%',dpi=200}
 knitr::include_graphics('images/hpa2.png')
 ```
-<p style="font-size:12pt" align="left"> Figura 5. Eje hipotálamo-pituitaria-adrenal (HPA) (Modificado de <span style="color:Blue">Joachim & Spangler, 2013</span>) </p>
+<p style="font-size:12pt" align="left"> Figura 6. Eje hipotálamo-pituitaria-adrenal (HPA) (Modificado de <span style="color:Blue">Joachim & Spangler, 2013</span>) </p>
 
 .footnote[----
 Ruisoto $\&$ Contador. (2019). The role of stress in drug addiction. An integrative review   
@@ -145,7 +150,7 @@ knitr::include_graphics('images/restr.png')
 ```{r echo=FALSE, fig.align='center', out.width='90%',dpi=200}
 knitr::include_graphics('images/restraint_e.png')
 ```
-<p style="font-size:12pt" align="left"> Figura 6. Peso corporal diario (±SE) de grupos de 6 ratas macho Sprague-Dawley restringidas durante 3 h/día (Modificado de <span style="color:Blue">Harris et al., 1998</span>) </p>
+<p style="font-size:12pt" align="left"> Figura 7. Peso corporal diario (±SE) de grupos de 6 ratas macho Sprague-Dawley restringidas durante 3 h/día (Modificado de <span style="color:Blue">Harris et al., 1998</span>) </p>
 
 .footnote[----
 Harris et al. (1998). Effect of repeated stress on body weight and body composition of rats fed low- and high-fat diets]
@@ -161,7 +166,7 @@ Harris et al. (1998). Effect of repeated stress on body weight and body composit
 knitr::include_graphics('images/sisali.png')
 ```
 <p style="font-size:12pt"> 
-Figura 7. Promedio de consumo durante la intervención a estrés (restricción) en ratas Wistar (Modificado de <span style="color:Blue">Gomez et al., 2012</span>)
+Figura 8. Promedio de consumo durante la intervención a estrés (restricción) en ratas Wistar (Modificado de <span style="color:Blue">Gomez et al., 2012</span>)
 </p>
 
 .footnote[----
