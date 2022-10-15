@@ -479,7 +479,7 @@ Crecimiento.plt_abs <- ggline(Data %>% filter(Phase=="Recaída"),
                           add = c("mean_se"), size=2,color = "Grupo", 
                           facet.by = "Phase",ylab = "Peso (kg)",
                           palette = c("#B22222","#217175","#737373", "#168a44")) +
-  annotate("rect", xmin = 1, xmax = 6, ymin = 0, ymax = 0.25,alpha = .2) +
+  annotate("rect", xmin = 1, xmax = 5, ymin = 0, ymax = 0.25,alpha = .2) +
   annotate(geom="text", x=1, y=0.26, label="*",
            color="black") +
   annotate(geom="text", x=4, y=0.26, label="*",
@@ -668,7 +668,7 @@ Intake_plot <- ggline(Data_al, x = "Session", y =  "main_intake",
        group = "Grupo",add = c("mean_se"), size=1,color = "Grupo", 
        facet.by = "Phase",ylab = "Consumo EtOH (g/kg/24 hrs)",xlab = "Sesión",
        palette = c("#B22222","#217175","#737373", "#168a44")) +
-  annotate("rect", xmin = 1, xmax = 6, ymin = 0, ymax = 7,alpha = .2) + 
+  annotate("rect", xmin = 1, xmax = 5, ymin = 0, ymax = 7,alpha = .2) + 
   theme(text = element_text(size=20),
         axis.text.x = element_text(size=15))
 Intake_plot
@@ -835,7 +835,7 @@ plot_lc <- ggplot(cuco, aes(Session, main_intake, group=Session, colour=clases))
                       labels = c("Alc bajo (n = 4)","Alc alto (n = 4)","Alc+Str bajo (n = 1)", "Alc+Str alto (n = 6)")) +
   theme_bw(base_size = 16) + 
   labs(x="Sesiones",y="Consumo EtOH (g/Kg 24 hrs)",colour="Clases latentes") +
-  annotate("rect", xmin = 0, xmax = 6, ymin = 0, ymax = 5,alpha = .2)
+  annotate("rect", xmin = 0, xmax = 5, ymin = 0, ymax = 5,alpha = .2)
 plot_lc
 
 ```
@@ -858,3 +858,12 @@ class: inverse, middle, center
 background-size: contain
 
 ## Gracias
+
+---
+
+![video](media/animation.avi)
+
+
+<video width="320" height="240">
+<source src="images/fercho.mp4" type="video/mp4">
+</video>
