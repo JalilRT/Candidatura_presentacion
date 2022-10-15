@@ -39,9 +39,6 @@ xaringanExtra::use_scribble()
 ## ¿Cómo influye el estrés en el consumo de alcohol y cómo esto afecta el cerebro? 
 ----
 
-</br>
-</br>
-
 ```{r echo=FALSE, fig.align='center', out.width='100%',dpi=200}
 knitr::include_graphics('images/objetivo.png')
 ```
@@ -168,7 +165,7 @@ Seewoo et al. (2020). Validation of Chronic Restraint Stress Model in Young Adul
 
 ---
 
-### ¿El estrés crónico afecta la ingesta de alcohol?
+### <span style="color:#0591d2"> ¿El estrés crónico afecta el consumo? </span>
 ----
 
 .pull-left[
@@ -208,10 +205,8 @@ Chester, et al. (2004). Effects of stress on alcohol consumption in rats selecti
 ----
 
 .blockquote[
-<span style="color:#000000"> Determinar la influencia del estrés sobre el comportamiento de ingesta de alcohol y los cambios cerebrales derivados en un estudio longitudinal. </span>
+<span style="color:#000000"> Determinar los biomarcadores conductuales y cerebrales relacionados a la influencia del estrés sobre la consumo de alcohol. </span>
 ]
-
-</br>
 
 ```{r echo=FALSE, fig.align='center', out.width='100%',dpi=200}
 knitr::include_graphics('images/objetivo.png')
@@ -223,10 +218,9 @@ knitr::include_graphics('images/objetivo.png')
 ----
 .blockquote[
 
-- <span style="color:#000000"> Estudiar si el estrés crónico modifica la conducta de ingesta de alcohol y preferencia por la sustancia. </span>
-- <span style="color:#000000"> Determinar si el estrés crónico modifica las alteraciones conductuales o cognitivas producidas por la ingesta de alcohol. </span>
+- <span style="color:#000000"> Estudiar el efecto del estrés crónico sobre la conducta de consumo de alcohol y preferencia por la sustancia. </span>
+- <span style="color:#000000"> Caracterizar el efecto del estrés crónico sobre el estado conductual y cognitivo derivado de la consumo de alcohol. </span>
 - <span style="color:#000000"> Caracterizar los cambios cerebrales estructurales y funcionales macroscópicos producidos por el consumo crónico de alcohol en presencia o ausencia de estrés crónico. </span>
-- <span style="color:#000000"> Caracterizar los cambios cerebrales a nivel celular producidos por el consumo crónico de alcohol en presencia o ausencia de estrés crónico. </span>
 ]
 
 ---
@@ -236,15 +230,18 @@ knitr::include_graphics('images/objetivo.png')
 .blockquote[
 
 - <span style="color:#000000"> El estrés crónico incrementará el nivel de consumo de alcohol en un modelo de AUD en ratas. </span>
-- <span style="color:#000000"> Las ratas con fenotipo alcohólico tendrán alteraciones en volumen cerebral. En específico, se espera un aumento de volumen en corteza cingulada posterior y corteza medial prefrontal, así como disminución en tálamo, caudado, putamen y giro dentado </span>
+- <span style="color:#000000"> El grupo de alcohol + estrés tendrá mayores déficits cognitivos y en comportamiento reflejado por las pruebas de laberinto elevado y reconocimiento de objeto novedoso. </span>
+- <span style="color:#000000"> Las ratas con fenotipo alcohólico tendrán alteraciones en volumen cerebral. En específico, se espera un aumento de volumen en corteza cingulada posterior, amígdala y corteza medial prefrontal, así como disminución en tálamo, caudado, putamen y giro dentado </span> 
 - <span style="color:#000000"> El consumo crónico de alcohol más estrés crónico producirá un incremento en conectividad funcional entre la amígdala y la ínsula y/o estriado. </span>
 - <span style="color:#000000"> El consumo crónico de alcohol más estrés crónico producirá incrementos en las alteraciones conductuales y en el déficit cognitivo en comparación con ratas con AUD sin estrés. </span>
 ]
 
 ---
 
-## Impacto del estrés crónico sobre la ingesta
+## Diseño experimental
 ----
+
+</br>
 
 ```{r echo=FALSE, fig.align='center', out.width='50%',dpi=200}
 knitr::include_graphics('images/diseno.png')
@@ -253,29 +250,97 @@ knitr::include_graphics('images/diseno.png')
 
 ---
 
-## Método
-----
+## Estandarización
 
-#### Materiales
+.panelset[
+.panel[.panel-name[Modelos]
 
-- A | Restrictor de movimiento construido en acrílico con ajuste para el tamaño de la rata
-- B | Dos botellas, una con agua y otra con Etanol al 20%
+A | Modelo de acceso intermitente a dos botellas (IA2BC)   
+B | Modelo de estrés crónico por restricción de movimiento (CRS)
 
-```{r echo=FALSE, fig.align='center', out.width='50%',dpi=200}
+</br>
+
+```{r echo=FALSE, fig.align='center', out.width='80%',dpi=200}
 knitr::include_graphics('images/Fig7.png')
 ```
-#### Animales: 
-<p style="font-size:12pt">
-- 30 ratas Wistar (16 hembras)
-- Ciclo invertido 12h (oscuridad/luz): encendido 7 am </br>
-- Restricción: lapso 11:00-14:00 </br>
-- El peso corporal y el alimento fueron medidos diariamente como medidores de respuesta a estrés </br>
-- Extracción de sangre para prueba de corticosterona (~12:00 pm), posterior a 1 hr de restricción.
-</p>
+
+]
+.panel[.panel-name[IA2BC]
+```{r echo=FALSE, fig.align='center', out.width='60%',dpi=200}
+knitr::include_graphics('images/Main_intake_model.png')
+```
+<p style="font-size:12pt" align="center"> Figura 3. consumo de etanol en ratas Wistar inducida por el modelo IA2BC durante la exposición al etanol </span> </p>
+
+]
+.panel[.panel-name[CRS]
+```{r echo=FALSE, fig.height=5.5, fig.width=11.8, message=FALSE, warning=FALSE, cache=FALSE, paged.print=FALSE, results='asis',dpi=200}
+
+setwd("/home/jalil/Documents/Psilantro/meh2/Semestre_4/data/pilot/")
+pacman::p_load(tidyverse,ggthemes,cowplot,ggstatsplot,ggpubr, plotly)
+stress_batch1<-read_csv("Stress_pilot.csv")
+std <- function(x) sd(x)/sqrt(length(x))
+stress_batch1 <- stress_batch1 %>% group_by(Group,Age) %>% 
+  summarise(Weigthstd=std(Weight),Weight=mean(Weight))
+
+stress_batch1_Weight<-stress_batch1 %>% 
+  ggplot(aes(x=Age,y=Weight,color=as.factor(Group))) + geom_point() + geom_line() +
+  geom_rangeframe() + theme_tufte() + ylab("Peso") + xlab("Edad") +
+  theme(legend.position = "bottom", legend.title = element_text(face="bold", size=20), 
+  legend.text = element_text(size=18),
+  axis.text = element_text(size=16), axis.title = element_text(size=18)) +
+  scale_color_excel_new(name = "Grupo", labels = c("1 Hr", "3 Hrs", "Ctrl")) +
+  scale_x_discrete(breaks = c("P47", "P52", "P57", "P62", "P67", "P72", "P77")) +
+  geom_pointrange(aes(ymin=Weight - Weigthstd, ymax=Weight + Weigthstd))
+
+stress_batch1_Weight
+
+```
+<p style="font-size:12pt" align="center"> Figura 2. Crecimiento longitudinal en peso de cada grupo. Se muestra el cambio de peso desde el inicio del protocolo de estrés crónico. </span> </p>
+]
+]
 
 ---
 
-## 
+## Protocolo
+
+</br>
+</br>
+</br>
+
+```{r echo=FALSE, fig.align='center', out.width='90%',dpi=200}
+knitr::include_graphics('images/secuencia2_1.png')
+```
+<p style="font-size:12pt" align="center"> Figura 2. Protocolo del modelo de acceso intermitente por 2 botellas (IA2BC) y de estrés crónico por restricción de movimiento (CRS). </span> </p>
+
+---
+
+## Protocolo
+
+</br>
+</br>
+</br>
+
+```{r echo=FALSE, fig.align='center', out.width='90%',dpi=200}
+knitr::include_graphics('images/secuencia2_2.png')
+```
+<p style="font-size:12pt" align="center"> Figura 2. Protocolo del modelo de acceso intermitente por 2 botellas (IA2BC) y de estrés crónico por restricción de movimiento (CRS). </span> </p>
+
+---
+
+## Protocolo
+
+</br>
+</br>
+</br>
+
+```{r echo=FALSE, fig.align='center', out.width='90%',dpi=200}
+knitr::include_graphics('images/secuencia2_3.png')
+```
+<p style="font-size:12pt" align="center"> Figura 2. Protocolo del modelo de acceso intermitente por 2 botellas (IA2BC) y de estrés crónico por restricción de movimiento (CRS). </span> </p>
+
+---
+
+## Protocolo
 
 </br>
 </br>
@@ -288,15 +353,50 @@ knitr::include_graphics('images/secuencia2.png')
 
 ---
 
-## <span style="color:#0591d2">Objetivos particulares </span>
+## Método
 ----
-.blockquote[
 
-- <span style="color:#CD5C5C"> Estudiar si el estrés crónico modifica la conducta de ingesta de alcohol y preferencia por la sustancia. </span>
-- <span style="color:#000000"> Determinar si el estrés crónico modifica las alteraciones conductuales o cognitivas producidas por la ingesta de alcohol. </span>
-- <span style="color:#000000"> Caracterizar los cambios cerebrales estructurales y funcionales macroscópicos producidos por el consumo crónico de alcohol en presencia o ausencia de estrés crónico. </span>
-- <span style="color:#000000"> Caracterizar los cambios cerebrales a nivel celular producidos por el consumo crónico de alcohol en presencia o ausencia de estrés crónico. </span>
-]
+#### Materiales
+
+- A | Dos botellas, una con agua y otra con Etanol al 20% 
+- B | Restrictor de movimiento construido en acrílico con ajuste para el tamaño de la rata
+
+```{r echo=FALSE, fig.align='center', out.width='50%',dpi=200}
+knitr::include_graphics('images/Fig7.png')
+```
+#### Animales: 
+<p style="font-size:12pt">
+- 30 ratas Wistar (16 hembras): (Alc = 8, Ctrl = 8, Str = 7, Alc+Str = 7) </br>
+- Ciclo invertido 12h (oscuridad/luz): encendido 7 am </br>
+- Restricción: lapso 11:00-14:00 </br>
+- El peso corporal y el alimento fueron medidos diariamente como medidores de respuesta a estrés </br>
+- Extracción de sangre para prueba de corticosterona (~12:00 pm), posterior a 1 hr de restricción.
+</p>
+
+---
+background-image: url("assets/DLC.png")
+background-size: 90px
+background-position: 95% 2%
+
+## Pruebas conductuales
+----
+
+</br>
+</br>
+
+```{r echo=FALSE, fig.align='center', out.width='90%',dpi=200}
+knitr::include_graphics('images/Fig10.png')
+```
+
+<p style="font-size:12pt">
+- A | LEC: 5 minutos <span style="color:Blue">(Walf and Frye, 2007)</span> </br>
+- B | CPL: 10 y 30 minutos <span style="color:Blue">(Lucke-Wold, 2011)</span> </br>
+- C | NOR: 3 minutos
+</p>
+
+.footnote[----
+Walf, A. A., & Frye, C. A. (2007). The use of the elevated plus maze as an assay of anxiety-related behavior in rodents. Nature protocols </br>
+Lucke-Wold, Brandon. (2011). The Varied Uses of Conditioned Place Preference in Behavioral Neuroscience Research: An Investigation of Alcohol Administration in Model Organisms.]
 
 ---
 
@@ -409,26 +509,6 @@ Crecimiento_both
 <p style="font-size:12pt" align="center"> Figura 3. Ganancia de peso de cada grupo  lo largo del protocolo. Se muestra el cambio de peso desde el inicio del protocolo de estrés y IA2BC. Área sombreada indica la fase aguda de la intervención. </span> </p>
 
 ]
-.panel[.panel-name[Abstinencia]
-```{r echo=FALSE, fig.height=6.3, fig.width=11.8, message=FALSE, warning=FALSE, cache=FALSE, paged.print=FALSE, results='asis',dpi=200}
-setwd("/home/jalil/Documents/Psilantro/meh2/Semestre_3/")
-stressAbst_batch1<-read_csv("Abst_Bitacora.csv")
-stressAbst_batch1 <- stressAbst_batch1 %>% rename(replace = c("Group"="Grupo"))
-
-Abstinencia_plot <- ggline(stressAbst_batch1, x = "Age", y =  "Weight_kg_base", 
-                           group = "Grupo",add = c("mean_se"), size=2,color = "Grupo", 
-                           ylab = "Peso (kg)",xlab = "Edad",
-                           palette = c("#B22222","#217175","#737373", "#168a44")) +
-  annotate(geom="text", x=17, y=0.082, label="*",
-           color="black") +
-  annotate(geom="text", x=18, y=0.082, label="*",
-           color="black") + theme(text = element_text(size=20),
-                                  axis.text.x = element_text(size=15))
-Abstinencia_plot
-```
-<p style="font-size:12pt" align="center"> Figura 4. Ganancia de peso de cada grupo durante el periodo de abstinencia. Se muestra el cambio de peso desde el inicio de la abstinencia. </span> </p>
-
-]
 .panel[.panel-name[Corticosterona]
 ```{r echo=FALSE, fig.height=6.3, fig.width=11.8, message=FALSE, warning=FALSE, cache=FALSE, paged.print=FALSE, results='asis',dpi=200}
 setwd("~/Documents/Alc_model/")
@@ -459,77 +539,6 @@ cortico
 <p style="font-size:12pt" align="center"> Figura 5. Medición de corticosterona en el P142 en una submuestra. </span> </p>
 
 ]
-]
-
----
-
-## Ingesta de alcohol
-
-.panelset[
-.panel[.panel-name[Ingesta principal]
-
-```{r echo=FALSE, fig.height=6, fig.width=11.8, message=FALSE, warning=FALSE, cache=FALSE, paged.print=FALSE, results='asis',dpi=200}
-Data_al <-  Data %>% 
-  filter(Bottle == "EtOH", Grupo == "Alc" | Grupo == "Alc+Str")
-Data_al$Session <- as.numeric(Data_al$Session)
-
-Intake_plot <- ggline(Data_al, x = "Session", y =  "main_intake", 
-       group = "Grupo",add = c("mean_se"), size=1,color = "Grupo", 
-       facet.by = "Phase",ylab = "Consumo EtOH (g/kg/24 hrs)",xlab = "Sesión",
-       palette = c("#B22222","#217175","#737373", "#168a44")) +
-  annotate("rect", xmin = 1, xmax = 6, ymin = 0, ymax = 7,alpha = .2) + 
-  theme(text = element_text(size=20),
-        axis.text.x = element_text(size=15))
-Intake_plot
-
-```
-<p style="font-size:12pt" align="center"> Figura 6. Ingesta de etanol en ratas Wistar inducida por el modelo IA2BC durante la exposición al etanol y la recaída en cada grupo. Área sombreada indica la fase aguda de la intervención. </span> </p>
-
-]
-]
-
----
-
-## <span style="color:#0591d2">Objetivos particulares </span>
-----
-.blockquote[
-
-- <span style="color:#000000"> Estudiar si el estrés crónico modifica la conducta de ingesta de alcohol y preferencia por la sustancia. </span>
-- <span style="color:#CD5C5C"> Determinar si el estrés crónico modifica las alteraciones conductuales o cognitivas producidas por la ingesta de alcohol. </span>
-- <span style="color:#000000"> Caracterizar los cambios cerebrales estructurales y funcionales macroscópicos producidos por el consumo crónico de alcohol en presencia o ausencia de estrés crónico. </span>
-- <span style="color:#000000"> Caracterizar los cambios cerebrales a nivel celular producidos por el consumo crónico de alcohol en presencia o ausencia de estrés crónico. </span>
-]
-
----
-
-## Pruebas conductuales
-----
-
-</br>
-</br>
-
-```{r echo=FALSE, fig.align='center', out.width='90%',dpi=200}
-knitr::include_graphics('images/Fig10.png')
-```
-
-<p style="font-size:12pt">
-- A | LEC: 5 minutos <span style="color:Blue">(Walf and Frye, 2007)</span> </br>
-- B | CPL: 10 y 30 minutos <span style="color:Blue">(Lucke-Wold, 2011)</span> </br>
-- C | NOR: 3 minutos
-</p>
-
-.footnote[----
-Walf, A. A., & Frye, C. A. (2007). The use of the elevated plus maze as an assay of anxiety-related behavior in rodents. Nature protocols </br>
-Lucke-Wold, Brandon. (2011). The Varied Uses of Conditioned Place Preference in Behavioral Neuroscience Research: An Investigation of Alcohol Administration in Model Organisms.]
-
----
-background-image: url("assets/DLC.png")
-background-size: 120px
-background-position: 90% 2%
-
-## Análisis conductual
-
-.panelset[
 .panel[.panel-name[EPM cerrado]
 
 ```{r echo=FALSE, fig.height=6.3, fig.width=11.8, message=FALSE, warning=FALSE, cache=FALSE, paged.print=FALSE, results='asis',dpi=200}
@@ -641,6 +650,33 @@ plot_EPM.open
 <p style="font-size:12pt" align="center"> Figura 8. Tiempo de exploración en brazos abiertos por punto de tiempo. </span> </p>
 
 ]
+]
+
+---
+
+## Consumo de alcohol
+
+.panelset[
+.panel[.panel-name[consumo principal]
+
+```{r echo=FALSE, fig.height=6, fig.width=11.8, message=FALSE, warning=FALSE, cache=FALSE, paged.print=FALSE, results='asis',dpi=200}
+Data_al <-  Data %>% 
+  filter(Bottle == "EtOH", Grupo == "Alc" | Grupo == "Alc+Str")
+Data_al$Session <- as.numeric(Data_al$Session)
+
+Intake_plot <- ggline(Data_al, x = "Session", y =  "main_intake", 
+       group = "Grupo",add = c("mean_se"), size=1,color = "Grupo", 
+       facet.by = "Phase",ylab = "Consumo EtOH (g/kg/24 hrs)",xlab = "Sesión",
+       palette = c("#B22222","#217175","#737373", "#168a44")) +
+  annotate("rect", xmin = 1, xmax = 6, ymin = 0, ymax = 7,alpha = .2) + 
+  theme(text = element_text(size=20),
+        axis.text.x = element_text(size=15))
+Intake_plot
+
+```
+<p style="font-size:12pt" align="center"> Figura 6. consumo de etanol en ratas Wistar inducida por el modelo IA2BC durante la exposición al etanol y la recaída en cada grupo. Área sombreada indica la fase aguda de la intervención. </span> </p>
+
+]
 .panel[.panel-name[Preferencia (CPP)]
 
 ```{r echo=FALSE, fig.height=6, fig.width=11.8, message=FALSE, warning=FALSE, cache=FALSE, paged.print=FALSE, results='asis',dpi=200}
@@ -712,22 +748,10 @@ plot_Bcpp
 
 ---
 
-## <span style="color:#0591d2">Objetivos particulares </span>
-----
-.blockquote[
-
-- <span style="color:#000000"> Estudiar si el estrés crónico modifica la conducta de ingesta de alcohol y preferencia por la sustancia. </span>
-- <span style="color:#000000"> Determinar si el estrés crónico modifica las alteraciones conductuales o cognitivas producidas por la ingesta de alcohol. </span>
-- <span style="color:#CD5C5C"> Caracterizar los cambios cerebrales estructurales y funcionales macroscópicos producidos por el consumo crónico de alcohol en presencia o ausencia de estrés crónico. </span>
-- <span style="color:#000000"> Caracterizar los cambios cerebrales a nivel celular producidos por el consumo crónico de alcohol en presencia o ausencia de estrés crónico. </span>
-]
-
----
-
-## Análisis de neuroimagen
+## Cambios cerebrales estructurales
 
 .panelset[
-.panel[.panel-name[Cambios volumétricos]
+.panel[.panel-name[Alc+Str > Alc]
 
 ```{r echo=FALSE, fig.align='center', out.width='90%',dpi=200}
 knitr::include_graphics('images/AlcStr_Alc.png')
@@ -735,7 +759,7 @@ knitr::include_graphics('images/AlcStr_Alc.png')
 <p style="font-size:12pt" align="left"> Figura 10. Deformación volumétrica local en contraste de Alc+Str > Alc Mapas de valores-t. El aumento de los volúmenes locales se representa con colores cálidos, mientras que la disminución de los volúmenes locales se representa con colores fríos. </span> </p>
 
 ]
-.panel[.panel-name[Cambios volumétricos]
+.panel[.panel-name[Alc+Str > Str]
 
 ```{r echo=FALSE, fig.align='center', out.width='90%',dpi=200}
 knitr::include_graphics('images/AlcStr_Str.png')
@@ -746,10 +770,10 @@ knitr::include_graphics('images/AlcStr_Str.png')
 ]
 ---
 
-## Ingesta por clasificación
+## Variabilidad individual
 
 .panelset[
-.panel[.panel-name[Ingesta]
+.panel[.panel-name[consumo]
 
 ```{r fig.height=6, fig.width=11.8, message=FALSE, warning=FALSE, cache=FALSE, include=FALSE, paged.print=FALSE, results='asis',dpi=200}
 pacman::p_load(lme4, performance, lcmm)
@@ -808,7 +832,7 @@ cuco$clases <- factor(cuco$clases)
 plot_lc <- ggplot(cuco, aes(Session, main_intake, group=Session, colour=clases)) +
   geom_smooth(aes(group=clases),method = NULL,  size=2, se=F) +
   scale_colour_manual(values = c("#008B8B","#CD3333","#4c8b00","#cd9333"), 
-                      labels = c("Alc bajo (4)","Alc alto (4)","Alc+Str bajo (1)", "Alc+Str alto (6)")) +
+                      labels = c("Alc bajo (n = 4)","Alc alto (n = 4)","Alc+Str bajo (n = 1)", "Alc+Str alto (n = 6)")) +
   theme_bw(base_size = 16) + 
   labs(x="Sesiones",y="Consumo EtOH (g/Kg 24 hrs)",colour="Clases latentes") +
   annotate("rect", xmin = 0, xmax = 6, ymin = 0, ymax = 5,alpha = .2)
@@ -816,16 +840,16 @@ plot_lc
 
 ```
 
-<p style="font-size:12pt" align="left"> Figura 12. Modelo de clasificación entre alta y baja ingesta de etanol (n de cada grupo). Área sombreada indica la fase aguda de la intervención. </span> </p>
+<p style="font-size:12pt" align="left"> Figura 12. consumo de etanol durante la primera fase de exposición a etanol. Subgrupos clasificados entre alta y baja consumo. Área sombreada indica la fase aguda de la intervención. </span> </p>
 
 ]
 ]
 
 ---
-## Perspectivas
+## [Perspectivas](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.p)
 
 - Completar la n (15 ratas por grupo).
-- Realizar los análisis tomando en cuenta la clasificación por patrón de ingesta.
+- Realizar los análisis tomando en cuenta la clasificación por patrón de consumo.
 - Análisis Multimodal de MRI (estructural y funcional).
 - Extracción de EtOH en sangre y diferentes puntos de corticosterona.
 
