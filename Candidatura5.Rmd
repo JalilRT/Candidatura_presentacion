@@ -159,7 +159,7 @@ Seewoo et al. (2020). Validation of Chronic Restraint Stress Model in Young Adul
 
 ---
 
-### ¿El estrés crónico afecta el consumo de alcohol?
+### <span style="color:#0591d2">¿El estrés crónico afecta el consumo de alcohol?</span>
 ----
 
 .pull-left[
@@ -222,7 +222,7 @@ knitr::include_graphics('images/objetivo.png')
 
 ---
 
-### <span style="color:#0591d2">Hipótesis</span>
+## Hipótesis
 ----
 
 .blockquote[
