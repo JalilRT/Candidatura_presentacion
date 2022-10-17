@@ -16,6 +16,7 @@
     <link href="Candidatura4_files/xaringanExtra-scribble-0.0.1/scribble.css" rel="stylesheet" />
     <script src="Candidatura4_files/xaringanExtra-scribble-0.0.1/scribble.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <script src="Candidatura4_files/xaringanExtra-progressBar-0.0.1/progress-bar.js"></script>
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
         TeX: { equationNumbers: { autoNumber: "AMS" } },
@@ -48,6 +49,60 @@ class: center, middle, inverse, title-slide
 
 
 
+<style>.xe__progress-bar__container {
+  bottom:0;
+  opacity: 1;
+  position:absolute;
+  right:0;
+  left: 0;
+}
+.xe__progress-bar {
+  height: 4px;
+  background-color: #0051BA;
+  width: calc(var(--slide-current) / var(--slide-total) * 100%);
+}
+.remark-visible .xe__progress-bar {
+  animation: xe__progress-bar__wipe 200ms forwards;
+  animation-timing-function: cubic-bezier(.86,0,.07,1);
+}
+@keyframes xe__progress-bar__wipe {
+  0% { width: calc(var(--slide-previous) / var(--slide-total) * 100%); }
+  100% { width: calc(var(--slide-current) / var(--slide-total) * 100%); }
+}</style>
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(https://raw.githubusercontent.com/rstudio/hex-stickers/master/images/pdcb.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
 
 
 ## [¿Cómo influye el estrés en el consumo de alcohol y cómo esto afecta el cerebro? ](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
@@ -57,7 +112,7 @@ class: center, middle, inverse, title-slide
 
 ---
 
-## [Panorama en México](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Panorama en México
 ----
 
 - El alcoholismo es el padecimiento adictivo de mayor prevalencia.
@@ -70,13 +125,13 @@ Fuente: CIJ, INEGI y GLAC consulting]
 
 ---
 
-## [Trastorno por uso de alcohol](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Trastorno por uso de alcohol
 ----
 
 Patrón desadaptativo de consumo que conlleva un deterioro o malestar clínicamente significativo (DSM-V).
 
 &lt;img src="images/autoadmin.png" width="42%" style="display: block; margin: auto;" /&gt;
-&lt;p style="font-size:14pt" align="center"&gt; Paradigmas de roedores y humanos para el estudio del trastorno por uso de alcohol a nivel translacional (Modificado de &lt;span style="color:Blue"&gt;Nieto et al., 2021&lt;/span&gt;) &lt;/p&gt;
+&lt;p style="font-size:14pt" align="center"&gt; Paradigmas en roedores y humanos para el estudio del trastorno por uso de alcohol (Modificado de &lt;span style="color:Blue"&gt;Nieto et al., 2021&lt;/span&gt;) &lt;/p&gt;
 
 .footnote[----
 American Psychiatric Association. (2013). Diagnostic and statistical manual of mental disorders (5th ed.)   
@@ -85,7 +140,7 @@ Nieto, S.J., Grodin, E.N., Aguirre, C.G. et al. (2021). Translational opportunit
 
 ---
 
-## [Vías implicadas en el consumo](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Vías implicadas en el consumo
 ----
 
 &lt;/br&gt;
@@ -99,24 +154,12 @@ Koob, G. F., &amp; Volkow, N. D. (2010). Neurocircuitry of addiction. Neuropsych
 
 ---
 
-## [Fenotipo por consumo crónico de alcohol](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
-----
-
-&lt;img src="images/corti.png" width="70%" style="display: block; margin: auto;" /&gt;
-&lt;p style="font-size:14pt" align="center"&gt; Aumento del grosor cortical del grupo del etanol en ratas Wistar adolescentes (AIE) comparado con un control (CON) en el cingulado posterior, detectado por resonancia magnética (MRI) e inmunohistoquímica
- (Modificado de &lt;span style="color:Blue"&gt;Vetreno et al, 2017&lt;/span&gt;) &lt;/p&gt;
-
-.footnote[----
-Vetreno RP, et al. (2017). Adult rat cortical thickness changes across age and following adolescent intermittent ethanol treatment. Addict Biol.]
-
----
-
-## [Factores implicados en el alcoholismo](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Factores implicados en el alcoholismo
 ----
 
 &lt;/br&gt;
-&lt;/br&gt;
-&lt;img src="images/intro5_22.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="images/intro51.png" width="40%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size:14pt" align="center"&gt; Factores asociados al consumo adictivo de alcohol
  (Modificado de &lt;span style="color:Blue"&gt;Kwako et al, 2017&lt;/span&gt;) &lt;/p&gt;
  
@@ -125,12 +168,11 @@ Kwako et al., (2017). Addictions Neuroclinical Assessment: A reverse translation
 
 ---
 
-## [Estrés](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Estrés
 ----
-- Percepción de la demanda excesiva del ambiente sobre la capacidad de un organismo &lt;span style="color:Blue"&gt; (Ruisoto `\(\&amp;\)` Contador, 2019) &lt;/span&gt;
-- Implica varios cambios fisiológicos que incluyen la activación del eje HPA.
+- Percepción de la demanda excesiva del ambiente sobre la capacidad de un organismo &lt;span style="color:Blue"&gt; (Ruisoto `\(\&amp;\)` Contador, 2019) &lt;/span&gt; e implica varios cambios fisiológicos que incluyen la activación del eje HPA.
 
-&lt;img src="images/hpa2.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/hpa2.png" width="35%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size:14pt" align="center"&gt; Eje hipotálamo-pituitaria-adrenal (HPA) (Modificado de &lt;span style="color:Blue"&gt;Joachim &amp; Spangler, 2013&lt;/span&gt;) &lt;/p&gt;
 
 .footnote[----
@@ -139,19 +181,19 @@ Joachim &amp; Spengler. (2013). Epigenetic risk factors in PTSD and depression. 
 
 ---
 
-## [Efectos por estrés crónico](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Efectos por estrés crónico
 ----
 
 - El estrés crónico genera efectos sobre la ganancia de peso y en regiones cerebrales.
 
 .pull-left[
 &lt;img src="images/restra_peso.png" width="100%" style="display: block; margin: auto;" /&gt;
-&lt;p style="font-size:14pt" align="center"&gt; Peso corporal diario (±SE) de ratas Sprague-Dawley restringidas durante 3 h/día (Modificado de &lt;span style="color:Blue"&gt;Harris et al., 1998&lt;/span&gt;) &lt;/p&gt;
+&lt;p style="font-size:14pt" align="center"&gt; Peso corporal diario (±SE) de ratas  restringidas durante 3 h/día (Modificado de &lt;span style="color:Blue"&gt;Harris et al., 1998&lt;/span&gt;) &lt;/p&gt;
 ]
 
 .pull-right[
 &lt;img src="images/CRS.png" width="100%" style="display: block; margin: auto;" /&gt;
-&lt;p style="font-size:14pt" align="center"&gt; Disminución del porcentaje de volumen del hipocampo tras 13 días de restricción, pero sin cambio en el grupo control (Modificado de &lt;span style="color:Blue"&gt;Seewoo et al., 2020&lt;/span&gt;) &lt;/p&gt;
+&lt;p style="font-size:14pt" align="center"&gt; Disminución del porcentaje de volumen del hipocampo tras 13 días de restricción (Modificado de &lt;span style="color:Blue"&gt;Seewoo et al., 2020&lt;/span&gt;) &lt;/p&gt;
 ]
 
 .footnote[----
@@ -161,7 +203,7 @@ Seewoo et al. (2020). Validation of Chronic Restraint Stress Model in Young Adul
 
 ---
 
-### [¿El estrés crónico afecta el consumo?](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+### ¿El estrés crónico afecta el consumo de alcohol?
 ----
 
 .pull-left[
@@ -174,10 +216,10 @@ Seewoo et al. (2020). Validation of Chronic Restraint Stress Model in Young Adul
 ]
 
 .pull-right[
-&lt;img src="images/medium_crs_al.png" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/medium_crs_al.png" width="81%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size:10pt" align="center"&gt; Aumento de consumo (Modificado de &lt;span style="color:Blue"&gt;Rockman et al., 1996&lt;/span&gt;) &lt;/p&gt;
 
-&lt;img src="images/high_crs_al.png" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/high_crs_al.png" width="81%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size:10pt" align="center"&gt; Disminución de consumo (Modificado de &lt;span style="color:Blue"&gt;Rockman et al., 1996&lt;/span&gt;) &lt;/p&gt;
 
 ]
@@ -189,30 +231,34 @@ Chester, et al. (2004). Effects of stress on alcohol consumption in rats selecti
 
 ---
 
-## [Objetivo](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Objetivo
 ----
 
 .blockquote[
 &lt;span style="color:#000000"&gt; Determinar los biomarcadores conductuales y cerebrales relacionados a la influencia del estrés sobre la consumo de alcohol. &lt;/span&gt;
 ]
 
-&lt;img src="images/objetivo.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/objetivo.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-## [Objetivos particulares](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Objetivos particulares
 ----
 .blockquote[
 
+- &lt;span style="color:#000000"&gt; Caracterizar los efectos del estrés crónico y del consumo de alcohol a nivel conductual &lt;/span&gt;
 - &lt;span style="color:#000000"&gt; Estudiar el efecto del estrés crónico sobre la conducta de consumo de alcohol y preferencia por la sustancia. &lt;/span&gt;
-- &lt;span style="color:#000000"&gt; Caracterizar el efecto del estrés crónico sobre el estado conductual y cognitivo derivado del consumo de alcohol. &lt;/span&gt;
-- &lt;span style="color:#000000"&gt; Caracterizar los cambios cerebrales estructurales y funcionales macroscópicos producidos por el consumo crónico de alcohol en presencia o ausencia de estrés crónico. &lt;/span&gt;
+- &lt;span style="color:#000000"&gt; Caracterizar la conducta de ansiedad producida por el estrés crónico y el consumo de alcohol &lt;/span&gt;
+- &lt;span style="color:#000000"&gt; Caracterizar los efectos del estrés y el consumo de alcohol sobre la memoria &lt;/span&gt;
+- &lt;span style="color:#000000"&gt; Determinar los cambios cerebrales estructurales macroscópicos producidos por el consumo crónico de alcohol en presencia o ausencia de estrés crónico. &lt;/span&gt;
+- &lt;span style="color:#000000"&gt; Determinar los cambios cerebrales funcionales macroscópicos producidos por el consumo crónico de alcohol en presencia o ausencia de estrés crónico. &lt;/span&gt;
 ]
 
 ---
 
 ### &lt;span style="color:#0591d2"&gt;Hipótesis&lt;/span&gt;
 ----
+
 .blockquote[
 
 - &lt;span style="color:#000000"&gt; El estrés crónico incrementará el nivel de consumo de alcohol en un modelo de AUD en ratas. &lt;/span&gt;
@@ -224,17 +270,17 @@ Chester, et al. (2004). Effects of stress on alcohol consumption in rats selecti
 
 ---
 
-## [Diseño experimental](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Diseño experimental
 ----
 
 &lt;/br&gt;
 
-&lt;img src="images/diseno.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/disenow.png" width="50%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size:12pt" align="center"&gt; Figura 1. Diseño experimental &lt;/span&gt; &lt;/p&gt;
 
 ---
 
-## [Estandarización](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Estandarización
 
 .panelset[
 .panel[.panel-name[Modelos]
@@ -248,19 +294,19 @@ B | Modelo de estrés crónico por restricción de movimiento (CRS)
 
 ]
 .panel[.panel-name[IA2BC]
-&lt;img src="images/Main_intake_model.png" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/Main_intake_model.png" width="55%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size:12pt" align="center"&gt; Figura 2. consumo de etanol en ratas Wistar inducida por el modelo IA2BC durante la exposición al etanol &lt;/span&gt; &lt;/p&gt;
 
 ]
 .panel[.panel-name[CRS]
-![](Candidatura4_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
+![](Candidatura4_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
 &lt;p style="font-size:12pt" align="center"&gt; Figura 3. Crecimiento longitudinal en peso de cada grupo. Se muestra el cambio de peso desde el inicio del protocolo de estrés crónico. &lt;/span&gt; &lt;/p&gt;
 ]
 ]
 
 ---
 
-## [Protocolo](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Protocolo
 
 &lt;/br&gt;
 &lt;/br&gt;
@@ -271,7 +317,7 @@ B | Modelo de estrés crónico por restricción de movimiento (CRS)
 
 ---
 
-## [Protocolo](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Protocolo
 
 &lt;/br&gt;
 &lt;/br&gt;
@@ -282,7 +328,7 @@ B | Modelo de estrés crónico por restricción de movimiento (CRS)
 
 ---
 
-## [Protocolo](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Protocolo
 
 &lt;/br&gt;
 &lt;/br&gt;
@@ -293,7 +339,7 @@ B | Modelo de estrés crónico por restricción de movimiento (CRS)
 
 ---
 
-## [Protocolo](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Protocolo
 
 &lt;/br&gt;
 &lt;/br&gt;
@@ -304,7 +350,7 @@ B | Modelo de estrés crónico por restricción de movimiento (CRS)
 
 ---
 
-## [Método](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Método
 ----
 
 #### Materiales
@@ -327,7 +373,7 @@ background-image: url("assets/DLC.png")
 background-size: 90px
 background-position: 95% 2%
 
-## [Pruebas conductuales](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Pruebas conductuales
 ----
 
 &lt;/br&gt;
@@ -347,48 +393,42 @@ Lucke-Wold, Brandon. (2011). The Varied Uses of Conditioned Place Preference in 
 
 ---
 
-## [Efectos por estrés](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Efectos por estrés
 
 .panelset[
 .panel[.panel-name[Peso]
 
-![](Candidatura4_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
+![](Candidatura4_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
 &lt;p style="font-size:12pt" align="center"&gt; Figura 5. Ganancia de peso de cada grupo  lo largo del protocolo. Se muestra el cambio de peso desde el inicio del protocolo de estrés y IA2BC. Área sombreada indica la fase aguda de la intervención. &lt;/span&gt; &lt;/p&gt;
 
 ]
 .panel[.panel-name[Corticosterona]
-![](Candidatura4_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
+![](Candidatura4_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
 &lt;p style="font-size:12pt" align="center"&gt; Figura 6. Medición de corticosterona en el P142 en una submuestra. &lt;/span&gt; &lt;/p&gt;
 
 ]
-.panel[.panel-name[EPM cerrado]
+.panel[.panel-name[EPM]
 
-![](Candidatura4_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
-&lt;p style="font-size:12pt" align="center"&gt; Figura 7. Tiempo de exploración en brazos cerrados por punto de tiempo. &lt;/span&gt; &lt;/p&gt;
-
-]
-.panel[.panel-name[EPM abierto]
-
-![](Candidatura4_files/figure-html/unnamed-chunk-28-1.png)&lt;!-- --&gt;
-&lt;p style="font-size:12pt" align="center"&gt; Figura 8. Tiempo de exploración en brazos abiertos por punto de tiempo. &lt;/span&gt; &lt;/p&gt;
+![](Candidatura4_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
+&lt;p style="font-size:12pt" align="center"&gt; Figura 7. Tiempo de exploración en brazos abiertos por punto de tiempo. A) Brazos cerrados, B) Brazos abiertos. &lt;/span&gt; &lt;/p&gt;
 
 ]
 ]
 
 ---
 
-## [Consumo de alcohol](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Consumo de alcohol
 
 .panelset[
 .panel[.panel-name[consumo principal]
 
-![](Candidatura4_files/figure-html/unnamed-chunk-29-1.png)&lt;!-- --&gt;
-&lt;p style="font-size:12pt" align="center"&gt; Figura 9. consumo de etanol en ratas Wistar inducida por el modelo IA2BC durante la exposición al etanol y la recaída en cada grupo. Área sombreada indica la fase aguda de la intervención. &lt;/span&gt; &lt;/p&gt;
+![](Candidatura4_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
+&lt;p style="font-size:12pt" align="center"&gt; Figura 9. Consumo de etanol inducida por el modelo IA2BC durante cada fase. Área sombreada indica la fase aguda de la intervención. &lt;/span&gt; &lt;/p&gt;
 
 ]
 .panel[.panel-name[Preferencia (CPP)]
 
-![](Candidatura4_files/figure-html/unnamed-chunk-30-1.png)&lt;!-- --&gt;
+![](Candidatura4_files/figure-html/unnamed-chunk-28-1.png)&lt;!-- --&gt;
 &lt;p style="font-size:12pt" align="center"&gt; Figura 10. Preferencia de pasar más tiempo en caja EtOH entre pretest vs test. Línea punteada marcada a 0.5. Preferencia &gt; 0.5 representa mayor tiempo en caja blanca (alcohol), mientras que &lt; 0.5 representa mayor tiempo en caja negra (agua). &lt;/span&gt; &lt;/p&gt;
 
 ]
@@ -396,47 +436,45 @@ Lucke-Wold, Brandon. (2011). The Varied Uses of Conditioned Place Preference in 
 
 ---
 
-## [Cambios cerebrales estructurales](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Cambios cerebrales estructurales
 
 .panelset[
 .panel[.panel-name[Alc+Str &gt; Alc]
 
-&lt;img src="images/AlcStr_Alc.png" width="90%" style="display: block; margin: auto;" /&gt;
-&lt;p style="font-size:12pt" align="left"&gt; Figura 11. Deformación volumétrica local en contraste de Alc+Str &gt; Alc Mapas de valores-t. El aumento de los volúmenes locales se representa con colores cálidos, mientras que la disminución de los volúmenes locales se representa con colores fríos. Sin corrección por comparaciones múltiples. &lt;/span&gt; &lt;/p&gt;
+&lt;img src="images/AlcStr_Alc.png" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size:12pt" align="left"&gt; Figura 11. Deformación volumétrica local en contraste de Alc+Str &gt; Alc Mapas de valores-t. El aumento de los volúmenes locales se representa con colores cálidos, mientras que la disminución de los volúmenes locales se representa con colores fríos. &lt;/span&gt; &lt;/p&gt;
 
 ]
 .panel[.panel-name[Alc+Str &gt; Str]
 
-&lt;img src="images/AlcStr_Str.png" width="90%" style="display: block; margin: auto;" /&gt;
-&lt;p style="font-size:12pt" align="left"&gt; Figura 12. Deformación volumétrica local en contraste de Alc+Str &gt; Str Mapas de valores-t. El aumento de los volúmenes locales se representa con colores cálidos, mientras que la disminución de los volúmenes locales se representa con colores fríos. Sin corrección por comparaciones múltiples. &lt;/span&gt; &lt;/p&gt;
+&lt;img src="images/AlcStr_Str.png" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size:12pt" align="left"&gt; Figura 12. Deformación volumétrica local en contraste de Alc+Str &gt; Str Mapas de valores-t. El aumento de los volúmenes locales se representa con colores cálidos, mientras que la disminución de los volúmenes locales se representa con colores fríos. &lt;/span&gt; &lt;/p&gt;
 
 ]
 ]
 ---
 
-## [Variabilidad individual](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## Variabilidad individual
 
 .panelset[
 .panel[.panel-name[consumo]
 
 
 
-![](Candidatura4_files/figure-html/unnamed-chunk-34-1.png)&lt;!-- --&gt;
-
-&lt;p style="font-size:12pt" align="left"&gt; Figura 13. consumo de etanol durante la primera fase de exposición a etanol. Subgrupos clasificados entre alta y baja consumo. Área sombreada indica la fase aguda de la intervención. &lt;/span&gt; &lt;/p&gt;
+![](Candidatura4_files/figure-html/unnamed-chunk-32-1.png)&lt;!-- --&gt;
+&lt;p style="font-size:12pt" align="left"&gt; Figura 13. Consumo de etanol durante la primera fase de exposición a etanol. Subgrupos clasificados entre alta y baja consumo. Área sombreada indica la fase aguda de la intervención. &lt;/span&gt; &lt;/p&gt;
 
 ]
 ]
 
 ---
-## [Perspectivas](https://youtu.be/3tJU_sGAoPY)
+## Perspectivas
 
 - Completar la n (12 ratas por grupo).
 - Realizar los análisis tomando en cuenta la clasificación por patrón de consumo.
-- Análisis Multimodal de MRI (estructural y funcional).
 - Extracción de EtOH en sangre y diferentes puntos de corticosterona.
 
-&lt;img src="images/plan.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/plan.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: inverse, middle, center
@@ -449,12 +487,12 @@ background-size: contain
 <script src="assets/remark-zoom.js"></script>
 <script src="https://platform.twitter.com/widgets.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
+"highlightStyle": "googlecode",
 "highlightLines": true,
-"countIncrementalSlides": false,
-"ratio": "4:3",
+"countIncrementalSlides": true,
+"ratio": "15:10",
 "navigation": {
-"scroll": false
+"scroll": true
 }
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
