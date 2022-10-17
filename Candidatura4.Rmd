@@ -45,7 +45,7 @@ xaringanExtra::use_logo(xaringan_logo)
 ```
 
 
-## [¿Cómo influye el estrés en el consumo de alcohol y cómo esto afecta el cerebro? ](https://docs.google.com/presentation/d/1tFfcIeapbOyHMbEJgzbz9Iz-48wFmcqJFoAnFQ9o5yM/edit#slide=id.g169ea73da99_0_0)
+## ¿Cómo influye el estrés en el consumo de alcohol y cómo esto afecta el cerebro?
 ----
 
 ```{r echo=FALSE, fig.align='center', out.width='100%',dpi=200}
